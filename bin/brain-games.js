@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
 
-/*const readlineSync = require('readline-sync');
-const calculator = require('./calculator');
+// const readlineSync = require('readline-sync');
+// import readlineSync from 'readline-sync';
+// import askName, { userName } from '../src/cli';
+
+import askName from '../src/cli.js';
+
+/*const calculator = require('./calculator');
 const progression = require('./progression');
 const evenNumber = require('./evennumber');
 const primeNumber = require('./primenumber');
@@ -20,9 +25,8 @@ const chooseGame = `
 **********************************;
 YOUR CHOOSE: `;
 
-const games = ['cl', 'pr', 'en', 'md', 'pn', 'q'];
-let userName;
-process.stdin.setEncoding('utf-8');*/
+const games = ['cl', 'pr', 'en', 'md', 'pn', 'q'];*/
+process.stdin.setEncoding('utf-8');
 console.log('Welcome to the Brain Games!\n');
 
 /*function askName() {
@@ -33,10 +37,12 @@ console.log('Welcome to the Brain Games!\n');
   } else {
     console.log(`Hi ${userName}!`);
   }
-}
-askName();
+}*/
+// askName();
 
-function myGame() {
+console.log(`Hi ${askName()}!`);
+
+/*function myGame() {
   const game = readlineSync.question(chooseGame);
   if (!games.includes(game)) {
     console.log(`Sorry, ${game} is not in games list. Try again\n`);
@@ -55,3 +61,4 @@ function myGame() {
 }
 
 myGame();*/
+
