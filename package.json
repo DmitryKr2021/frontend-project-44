@@ -1,0 +1,26 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/DmitryKr2021/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/DmitryKr2021/frontend-project-44/actions)",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "code": "bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+  "brain-games": "bin/brain-games.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitryKr2021/frontend-project-44.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitryKr2021/frontend-project-44/issues"
+  },
+  "homepage": "https://github.com/DmitryKr2021/frontend-project-44#readme"
+}
