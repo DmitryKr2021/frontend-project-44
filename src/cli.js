@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-/* eslint-disable no-console */
+
 export default function askName() {
   const userName = readlineSync.question('May I have your name? ');
   if (userName === '') {
