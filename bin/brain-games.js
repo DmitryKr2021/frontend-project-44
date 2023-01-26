@@ -3,12 +3,8 @@ import readlineSync from 'readline-sync';
 import askName from '../src/cli.js';
 // eslint-disable-next-line import/no-cycle
 import evenNumber from './brain-even.js';
-
-/*const calculator = require('./calculator');
-const progression = require('./progression');
-const evenNumber = require('./evennumber');
-const primeNumber = require('./primenumber');
-const commonDivisor = require('./commondivisor');*/
+// eslint-disable-next-line import/no-cycle
+import calculator from './brain-calc.js';
 
 const chooseGame = `
 ***********************************
@@ -35,9 +31,9 @@ function myGame() {
     console.log(`Sorry, ${game} is not in games list. Try again\n`);
     myGame();
   } else {
-    console.log(`Oh, ${userName} choosed ${game}!\n`);
+    console.log(`Oh, ${userName} choose ${game}!\n`);
     switch (game) {
-      // case 'cl': if (calculator()) { myGame(); } break;
+      case 'cl': if (calculator()) { myGame(); } break;
       // case 'pr': if (progression()) { myGame(); } break;
       case 'en': if (evenNumber()) { myGame(); } break;
       // case 'pn': if (primeNumber()) { myGame(); } break;
