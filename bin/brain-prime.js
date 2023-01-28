@@ -4,5 +4,5 @@ import brainGames from './brain-games.js';
 import isPrimeNumber from '../src/games/primeNumber.js';
 import { checkAnswer } from '../src/index.js';
 
-console.log('Answer "yes" if number prime otherwise answer "no"');
+console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
 checkAnswer(isPrimeNumber(), 'primeNumber');
