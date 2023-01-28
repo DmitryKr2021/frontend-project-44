@@ -13,29 +13,6 @@ export default function startGames() {
   userName = askName();
 }
 
-/* export function checkAnswer(answers, functionName) {
-  if (answers[0] === answers[1]) {
-    console.log('Correct!');
-    counter += 1;
-    if (counter === maxCount) {
-      console.log(`Congratulations, ${userName}!`);
-    } else {
-      switch (functionName) {
-        case 'evenNumber': checkAnswer(isEvenNumber(), 'evenNumber'); break;
-        case 'commonDivisor': checkAnswer(isCommonDivisor(), 'commonDivisor'); break;
-        case 'primeNumber': checkAnswer(isPrimeNumber(), 'primeNumber'); break;
-        case 'progression': checkAnswer(isInProgression(), 'progression'); break;
-        case 'calculator': checkAnswer(calculator(), 'calculator'); break;
-        default:
-      }
-    }
-  } else {
-    console.log(`'${answers[0]}' is wrong answer; (. Correct answer was '${answers[1]}'
-Let's try again, ${userName}!`);
-  }
-  return true;
-} */
-
 export function checkAnswer(answers, functionName) {
   if (answers[0] === answers[1]) {
     console.log('Correct!');
@@ -48,15 +25,15 @@ Let's try again, ${userName}!`);
 
   if (counter === maxCount) {
     console.log(`Congratulations, ${userName}!`);
-  } else {
-    switch (functionName) {
-      case 'evenNumber': checkAnswer(isEvenNumber(), 'evenNumber'); break;
-      case 'commonDivisor': checkAnswer(isCommonDivisor(), 'commonDivisor'); break;
-      case 'primeNumber': checkAnswer(isPrimeNumber(), 'primeNumber'); break;
-      case 'progression': checkAnswer(isInProgression(), 'progression'); break;
-      case 'calculator': checkAnswer(calculator(), 'calculator'); break;
-      default:
-    }
+    return;
   }
-  // return true;
+
+  switch (functionName) {
+    case 'evenNumber': checkAnswer(isEvenNumber(), 'evenNumber'); break;
+    case 'commonDivisor': checkAnswer(isCommonDivisor(), 'commonDivisor'); break;
+    case 'primeNumber': checkAnswer(isPrimeNumber(), 'primeNumber'); break;
+    case 'progression': checkAnswer(isInProgression(), 'progression'); break;
+    case 'calculator': checkAnswer(calculator(), 'calculator'); break;
+    default:
+  }
 }
