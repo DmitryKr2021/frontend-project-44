@@ -7,18 +7,18 @@
 
 !["image 1"](./screenshots/screenshot01.png)
 
-#### 2 Enter incorrect game
+#### 2 Game brain-even, successful
 
 !["image 2"](./screenshots/screenshot02.png)
 
-#### 3 Starting a game and incorrect answer
+#### 3 Game brain-even, unsuccessful
 
 !["image 3"](./screenshots/screenshot03.png)
 
-#### 4 Successful game and invitation to new game
+#### 4 Successful game brain-progression
 
 !["image 4"](./screenshots/screenshot04.png)
 
-#### 5 Bye
+#### 5 Successful game brain-gcd
 
 !["image 5"](./screenshots/screenshot05.png)
