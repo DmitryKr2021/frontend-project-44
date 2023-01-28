@@ -4,5 +4,5 @@ import brainGames from './brain-games.js';
 import isEvenNumber from '../src/games/evenNumber.js';
 import { checkAnswer } from '../src/index.js';
 
-console.log('Answer "yes" if number even otherwise answer "no"');
+console.log('Answer "yes" if the number is even otherwise answer "no"');
 checkAnswer(isEvenNumber(), 'evenNumber');
