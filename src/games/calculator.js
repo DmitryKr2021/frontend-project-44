@@ -5,7 +5,17 @@ export default function calculator() {
   const counter = Math.round(Math.random() * 2);
   const a = Math.floor(Math.random() * 20);
   const b = Math.floor(Math.random() * 20);
-  if (counter === 0) {
+  switch (counter) {
+    case 0: console.log(`Question: ${a} + ${b}`);
+      correctAnswer = a + b; break;
+    case 1: console.log(`Question: ${a} * ${b}`);
+      correctAnswer = a * b; break;
+    case 2: console.log(`Question: ${a} - ${b}`);
+      correctAnswer = a - b; break;
+    default:
+  }
+
+  /* if (counter === 0) {
     console.log(`Question: ${a} + ${b}`);
     correctAnswer = a + b;
   }
@@ -16,7 +26,7 @@ export default function calculator() {
   if (counter === 2) {
     console.log(`Question: ${a} - ${b}`);
     correctAnswer = a - b;
-  }
+  } */
   const userAnswer = +readlineSync.question('Your answer: ');
   return ([userAnswer, correctAnswer]);
 }
