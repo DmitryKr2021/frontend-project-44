@@ -14,19 +14,6 @@ export default function calculator() {
       correctAnswer = a - b; break;
     default:
   }
-
-  /* if (counter === 0) {
-    console.log(`Question: ${a} + ${b}`);
-    correctAnswer = a + b;
-  }
-  if (counter === 1) {
-    console.log(`Question: ${a} * ${b}`);
-    correctAnswer = a * b;
-  }
-  if (counter === 2) {
-    console.log(`Question: ${a} - ${b}`);
-    correctAnswer = a - b;
-  } */
   const userAnswer = +readlineSync.question('Your answer: ');
   return ([userAnswer, correctAnswer]);
 }
