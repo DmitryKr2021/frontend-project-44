@@ -10,7 +10,7 @@ export default function isInProgression() {
   }
   const deleteNumber = Math.ceil(Math.random() * (progressionLength - 2));
   const correctAnswer = arr[deleteNumber];
-  arr[deleteNumber] = '...';
+  arr[deleteNumber] = '..';
   console.log(`Question: ${arr.join(', ')}`);
   const userAnswer = +readlineSync.question('Your answer: ');
   return ([userAnswer, correctAnswer]);
