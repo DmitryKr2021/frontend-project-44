@@ -14,7 +14,13 @@ export default function startGames() {
 }
 
 export function checkAnswer(answers, functionName) {
-  if (answers[0] === answers[1]) {
+  // if (answers[0] === answers[1]) {
+// eslint-disable-next-line default-param-last
+// export function checkAnswer([userAnswer, correctAnswer] = answers, functionName) {
+  let userAnswer = '';
+  let correctAnswer = '';
+  [userAnswer, correctAnswer] = answers;
+  if (userAnswer === correctAnswer) {
     console.log('Correct!');
     counter += 1;
     if (counter === maxCount) {
