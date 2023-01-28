@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 
 export default function isPrimeNumber() {
   function isPrime(arg) {
+    if (arg === 2) { return true; }
     let result = arg % 2;
     for (let divisor = 3; divisor < Math.round(arg / 2); divisor += 2) {
       result *= arg % divisor;
