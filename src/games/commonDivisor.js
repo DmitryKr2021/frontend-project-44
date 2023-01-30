@@ -1,6 +1,4 @@
-import readlineSync from 'readline-sync';
-
-export default function isCommonDivisor() {
+export default function testCommonDivisor() {
   const args = [];
   const generateArgs = () => {
     args[0] = Math.ceil(Math.random() * 30);
@@ -16,7 +14,6 @@ export default function isCommonDivisor() {
   };
   const [a, b] = generateArgs();
   const correctAnswer = findMaxCommonDivisor(a, b);
-  console.log(`Question: ${a} ${b}`);
-  const userAnswer = +readlineSync.question('Your answer: ');
-  return ([userAnswer, correctAnswer]);
+  const question = `${a} ${b}`;
+  return ([question, correctAnswer]);
 }

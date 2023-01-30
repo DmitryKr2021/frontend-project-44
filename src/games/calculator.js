@@ -1,19 +1,12 @@
-import readlineSync from 'readline-sync';
+import MathCeilRandom from '../random.js';
 
 export default function calculator() {
-  let correctAnswer;
   const counter = Math.round(Math.random() * 2);
-  const a = Math.floor(Math.random() * 20);
-  const b = Math.floor(Math.random() * 20);
-  switch (counter) {
-    case 0: console.log(`Question: ${a} + ${b}`);
-      correctAnswer = a + b; break;
-    case 1: console.log(`Question: ${a} * ${b}`);
-      correctAnswer = a * b; break;
-    case 2: console.log(`Question: ${a} - ${b}`);
-      correctAnswer = a - b; break;
-    default:
-  }
-  const userAnswer = +readlineSync.question('Your answer: ');
-  return ([userAnswer, correctAnswer]);
+  const b = MathCeilRandom(20);
+  const a = MathCeilRandom(20);
+  const questions = [`${a} + ${b}`, `${a} * ${b}`, `${a} - ${b}`];
+  const correctAnswers = [(a + b), (a * b), (a - b)];
+  const question = questions[counter];
+  const correctAnswer = correctAnswers[counter];
+  return ([question, correctAnswer]);
 }

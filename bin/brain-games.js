@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import startGames from '../src/index.js';
+import askName from '../src/cli.js';
 
-export default function brainGames() {
+function brainGames() {
   console.log('Welcome to the Brain Games!');
-  startGames();
+  askName();
 }
 brainGames();

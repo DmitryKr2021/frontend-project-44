@@ -1,9 +1,8 @@
-import readlineSync from 'readline-sync';
+import MathCeilRandom from '../random.js';
 
-export default function isEvenNumber() {
-  const testNumber = Math.ceil(Math.random() * 100);
-  console.log(`Question: ${testNumber}`);
-  const userAnswer = readlineSync.question('Your answer: ');
+export default function testEvenNumber() {
+  const testNumber = MathCeilRandom(100);
+  const question = `${testNumber}`;
   const correctAnswer = testNumber % 2 ? 'no' : 'yes';
-  return ([userAnswer, correctAnswer]);
+  return ([question, correctAnswer]);
 }

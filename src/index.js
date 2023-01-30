@@ -1,39 +1,39 @@
+import readlineSync from 'readline-sync';
 import askName from './cli.js';
-import isEvenNumber from './games/evenNumber.js';
-import isPrimeNumber from './games/primeNumber.js';
-import isInProgression from './games/progression.js';
-import isCommonDivisor from './games/commonDivisor.js';
-import calculator from './games/calculator.js';
+import isCorrectAnswer from './isCorrectAnswer.js';
 
-let userName;
-let counter = 0;
-const maxCount = 3;
+export default function runEngine(thisFunction, functionName) {
+  const functionResult = thisFunction();
+  let counter = 0;
+  const maxCount = 3;
+  const startQuestions = {
+    evenNumber: 'Answer "yes" if the number is even, otherwise answer "no"',
+    commonDivisor: 'Find the greatest common divisor of given numbers',
+    primeNumber: 'Answer "yes" if given number is prime. Otherwise answer "no"',
+    progression: 'What number is missing in the progression?',
+    calculator: 'What is the result of the expression?',
+  };
 
-export default function startGames() {
-  userName = askName();
-}
+  console.log('Welcome to the Brain Games!');
+  const userName = askName();
+  console.log(startQuestions[functionName]);
 
-export function checkAnswer(answers, functionName) {
-  if (answers[0] === answers[1]) {
-    console.log('Correct!');
-    counter += 1;
-  } else {
-    console.log(`'${answers[0]}' is wrong answer; (. Correct answer was '${answers[1]}'
+  function checkAnswer([question, correctAnswer] = functionResult) {
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (isCorrectAnswer(userAnswer, correctAnswer)) {
+      console.log('Correct!');
+      counter += 1;
+    } else {
+      console.log(`'${userAnswer}' is wrong answer; (. Correct answer was '${correctAnswer}'
 Let's try again, ${userName}!`);
-    return;
+      return;
+    }
+    if (counter === maxCount) {
+      console.log(`Congratulations, ${userName}!`);
+      return;
+    }
+    checkAnswer(thisFunction());
   }
-
-  if (counter === maxCount) {
-    console.log(`Congratulations, ${userName}!`);
-    return;
-  }
-
-  switch (functionName) {
-    case 'evenNumber': checkAnswer(isEvenNumber(), 'evenNumber'); break;
-    case 'commonDivisor': checkAnswer(isCommonDivisor(), 'commonDivisor'); break;
-    case 'primeNumber': checkAnswer(isPrimeNumber(), 'primeNumber'); break;
-    case 'progression': checkAnswer(isInProgression(), 'progression'); break;
-    case 'calculator': checkAnswer(calculator(), 'calculator'); break;
-    default:
-  }
+  checkAnswer(thisFunction());
 }
