@@ -14,12 +14,12 @@
    
 #### Games examples:
 
-!["image 1"](./screenshots/screenshot01.png)
+![screenshot01](https://user-images.githubusercontent.com/79040401/216250498-0657c85a-5098-4bbc-8584-027919e39427.png)
 
-!["image 2"](./screenshots/screenshot02.png)
+![screenshot02](https://user-images.githubusercontent.com/79040401/216250590-c0d979c4-987e-4229-908e-196f9b51a3dd.png)
 
-!["image 3"](./screenshots/screenshot03.png)
+![screenshot03](https://user-images.githubusercontent.com/79040401/216250644-ca336ced-e56e-4941-ac54-5a2df7038b91.png)
 
-!["image 4"](./screenshots/screenshot04.png)
+![screenshot04](https://user-images.githubusercontent.com/79040401/216250688-2089c360-dfbc-4562-b880-f274d54ea8cc.png)
 
-!["image 5"](./screenshots/screenshot05.png)
+![screenshot05](https://user-images.githubusercontent.com/79040401/216250733-090eb5df-3f20-4eaf-8d8b-7c31a73a4262.png)
