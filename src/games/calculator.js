@@ -1,6 +1,6 @@
 import MathCeilRandom from '../random.js';
 
-export default function calculator() {
+export default function calculateExpression() {
   const counter = Math.round(Math.random() * 2);
   const b = MathCeilRandom(20);
   const a = MathCeilRandom(20);

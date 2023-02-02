@@ -1,4 +1,4 @@
-export default function testCommonDivisor() {
+export default function determineCommonDivisor() {
   const args = [];
   const generateArgs = () => {
     args[0] = Math.ceil(Math.random() * 30);

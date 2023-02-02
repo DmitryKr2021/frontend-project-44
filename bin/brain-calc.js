@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 import runEngine from '../src/index.js';
-import calculator from '../src/games/calculator.js';
+import calculateExpression from '../src/games/calculator.js';
 
-runEngine(calculator, 'calculator');
+runEngine(calculateExpression, 'calculator');

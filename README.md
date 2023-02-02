@@ -9,7 +9,7 @@
 ### 1. Even/odd number. You have to answer: even or odd a given number. Start game by "brain-even".
 ### 2. Prime number. You have to answer: prime or not a given number. Start game by "brain-prime".
 ### 3. Gratest common divisor. You have to find a gratest common divisor of two numbers. Start game by "brain-gcd".
-### 4. Progression. You have to find a missing progression member. Start game by "brain-progression".
+### 4. Progression. You have to find a missing progression term. Start game by "brain-progression".
 ### 5. Calculator. You have to solve tasks for addition, multiplication, subtraction. Start game by "brain-calc".
    
 #### Games examples:

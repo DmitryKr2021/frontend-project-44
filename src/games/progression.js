@@ -1,16 +1,16 @@
 import MathCeilRandom from '../random.js';
 
-export default function testInProgression() {
+export default function determineMissingProgressionTerm() {
   const arr = [];
   const progressionLength = 8;
-  const start = MathCeilRandom(20);
-  const step = MathCeilRandom(5);
+  const startProgression = MathCeilRandom(20);
+  const stepProgression = MathCeilRandom(5);
   for (let i = 0; i < progressionLength; i += 1) {
-    arr.push(start + step * i);
+    arr.push(startProgression + stepProgression * i);
   }
-  const deleteNumber = Math.ceil(Math.random() * (progressionLength - 2));
-  const correctAnswer = arr[deleteNumber];
-  arr[deleteNumber] = '..';
+  const deletedNumber = Math.ceil(Math.random() * (progressionLength - 2));
+  const correctAnswer = arr[deletedNumber];
+  arr[deletedNumber] = '..';
   const question = `${arr.join(' ')}`;
   return ([question, correctAnswer]);
 }
