@@ -1,19 +1,9 @@
+import generateRandomNumber, { findMaxCommonDivisor } from '../utils.js';
+
 export default function determineCommonDivisor() {
-  const args = [];
-  const generateArgs = () => {
-    args[0] = Math.ceil(Math.random() * 30);
-    args[1] = Math.ceil(Math.random() * 30);
-    return args;
-  };
-  const findMaxCommonDivisor = (x, y) => {
-    if (y !== 0) {
-      const z = x % y;
-      return findMaxCommonDivisor(y, z);
-    }
-    return x;
-  };
-  const [a, b] = generateArgs();
-  const correctAnswer = findMaxCommonDivisor(a, b);
+  const a = generateRandomNumber([0, 30]);
+  const b = generateRandomNumber([0, 30]);
+  const correctAnswer = String(findMaxCommonDivisor(a, b));
   const question = `${a} ${b}`;
-  return ([question, correctAnswer]);
+  return [question, correctAnswer];
 }

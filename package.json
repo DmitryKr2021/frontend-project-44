@@ -1,8 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/DmitryKr2021/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/DmitryKr2021/frontend-project-44/actions)",
-  "main": "index.js",
+  "description": "5 very interesting mathematical games",
   "type": "module",
   "bin": {
     "brain-games": "bin/brain-games.js",

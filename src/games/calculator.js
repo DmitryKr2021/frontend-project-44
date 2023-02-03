@@ -1,12 +1,11 @@
-import MathCeilRandom from '../random.js';
+import generateRandomNumber, { calculateRandomExpression } from '../utils.js';
 
 export default function calculateExpression() {
-  const counter = Math.round(Math.random() * 2);
-  const b = MathCeilRandom(20);
-  const a = MathCeilRandom(20);
-  const questions = [`${a} + ${b}`, `${a} * ${b}`, `${a} - ${b}`];
-  const correctAnswers = [(a + b), (a * b), (a - b)];
-  const question = questions[counter];
-  const correctAnswer = correctAnswers[counter];
-  return ([question, correctAnswer]);
+  const randomNumber = Math.round(Math.random() * 2);
+  const a = generateRandomNumber([0, 20]);
+  const b = generateRandomNumber([0, 20]);
+  const operators = ['+', '*', '-'];
+  const [question, correctAnswer] = calculateRandomExpression(a, b, operators[randomNumber]);
+
+  return [question, correctAnswer];
 }

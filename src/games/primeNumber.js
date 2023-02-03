@@ -1,9 +1,16 @@
-import isPrime from '../isPrime.js';
-import MathCeilRandom from '../random.js';
+import generateRandomNumber from '../utils.js';
+
+function isPrime(arg) {
+  let result = arg % 2;
+  for (let divisor = 3; divisor < Math.round(arg / 3); divisor += 2) {
+    result *= arg % divisor;
+  }
+  return result !== 0;
+}
 
 export default function determineIfNumberIsPrime() {
-  const testNumber = MathCeilRandom(50) + 2;
+  const testNumber = generateRandomNumber([2, 50]);
   const question = `${testNumber}`;
   const correctAnswer = isPrime(testNumber) ? 'yes' : 'no';
-  return ([question, correctAnswer]);
+  return [question, correctAnswer];
 }
