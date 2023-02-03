@@ -1,8 +1,9 @@
 import generateRandomNumber from '../utils.js';
 
 function isPrime(arg) {
+  if (arg === 2) return true;
   let result = arg % 2;
-  for (let divisor = 3; divisor < Math.round(arg / 3); divisor += 2) {
+  for (let divisor = 3; divisor < Math.ceil(arg / 3) + 1; divisor += 2) {
     result *= arg % divisor;
   }
   return result !== 0;
