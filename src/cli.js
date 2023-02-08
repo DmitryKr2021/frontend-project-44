@@ -6,6 +6,5 @@ export default function askName() {
     console.warn('INCORRECT_INPUT');
     askName();
   }
-  console.log(`Hello, ${userName}!`);
   return userName;
 }

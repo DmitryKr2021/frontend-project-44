@@ -1,4 +1,4 @@
-import generateRandomNumber from '../utils.js';
+import getRandomNumber from '../utils/getRandomNumber.js';
 
 function isPrime(arg) {
   if (arg === 2) return true;
@@ -10,8 +10,9 @@ function isPrime(arg) {
 }
 
 export default function determineIfNumberIsPrime() {
-  const testNumber = generateRandomNumber([2, 50]);
-  const question = `${testNumber}`;
-  const correctAnswer = isPrime(testNumber) ? 'yes' : 'no';
-  return [question, correctAnswer];
+  const testNumber = getRandomNumber(2, 50);
+  const question = String(testNumber);
+  const answer = isPrime(testNumber) ? 'yes' : 'no';
+  const roundQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+  return [question, answer, roundQuestion];
 }

@@ -1,13 +1,15 @@
-import generateRandomNumber, { generateProgression } from '../utils.js';
+import getRandomNumber from '../utils/getRandomNumber.js';
+import getProgression from '../utils/getProgression.js';
 
 export default function determineMissingProgressionTerm() {
-  const progressionLength = 8;
-  const startProgression = generateRandomNumber([0, 20]);
-  const stepProgression = generateRandomNumber([0, 5]);
-  const progression = generateProgression(progressionLength, startProgression, stepProgression);
-  const numberTermToDelete = generateRandomNumber([0, (progressionLength - 2)]);
-  const correctAnswer = String(progression[numberTermToDelete]);
+  const length = 8;
+  const startNumber = getRandomNumber(0, 20);
+  const step = getRandomNumber(0, 5);
+  const progression = getProgression(length, startNumber, step);
+  const numberTermToDelete = getRandomNumber(0, (length - 2));
+  const answer = progression[numberTermToDelete];
   progression[numberTermToDelete] = '..';
   const question = `${progression.join(' ')}`;
-  return [question, correctAnswer];
+  const roundQuestion = 'What number is missing in the progression?';
+  return [question, answer, roundQuestion];
 }

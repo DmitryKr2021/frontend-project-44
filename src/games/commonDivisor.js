@@ -1,9 +1,11 @@
-import generateRandomNumber, { findMaxCommonDivisor } from '../utils.js';
+import getGCD from '../utils/getGCD.js';
+import getRandomNumber from '../utils/getRandomNumber.js';
 
 export default function determineCommonDivisor() {
-  const a = generateRandomNumber([0, 30]);
-  const b = generateRandomNumber([0, 30]);
-  const correctAnswer = String(findMaxCommonDivisor(a, b));
+  const a = getRandomNumber(0, 30);
+  const b = getRandomNumber(0, 30);
+  const answer = getGCD(a, b);
   const question = `${a} ${b}`;
-  return [question, correctAnswer];
+  const roundQuestion = 'Find the greatest common divisor of given numbers';
+  return [question, answer, roundQuestion];
 }

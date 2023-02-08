@@ -1,26 +1,26 @@
 import readlineSync from 'readline-sync';
 import askName from './cli.js';
 
-export default function runEngine(generateRound, roundQuestion) {
-  let counter = 0;
-  const maxCount = 3;
+export default function runEngine(generateRound) {
+  const roundCount = 3;
 
   console.log('Welcome to the Brain Games!');
   const userName = askName();
+  console.log(`Hello, ${userName}!`);
+
+  const [roundQuestion] = generateRound().slice(2);
   console.log(roundQuestion);
 
-  while (counter < maxCount) {
+  for (let counter = 0; counter < roundCount; counter += 1) {
     const [question, correctAnswer] = generateRound();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
-      counter += 1;
-    } else {
-      console.log(`'${userAnswer}' is wrong answer; (. Correct answer was '${correctAnswer}'
-Let's try again, ${userName}!`);
+    if (userAnswer !== String(correctAnswer)) {
+      console.log(`'${userAnswer}' is wrong answer; (. Correct answer was '${correctAnswer}'`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${userName}!`);
 }
