@@ -7,6 +7,7 @@ export default function runEngine(generateRound) {
   console.log('Welcome to the Brain Games!');
   const userName = askName();
   console.log(`Hello, ${userName}!`);
+  if (generateRound === 'noRound') { return; }
 
   const [roundQuestion] = generateRound().slice(2);
   console.log(roundQuestion);
