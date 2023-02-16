@@ -15,7 +15,7 @@ export default function runProgression() {
     const startNumber = getRandomNumber(0, 20);
     const step = getRandomNumber(0, 5);
     const progression = getProgression(length, startNumber, step);
-    const hiddenIndex = getRandomNumber(0, progression.length);
+    const hiddenIndex = getRandomNumber(0, progression.length - 1);
     const answer = progression[hiddenIndex];
     progression[hiddenIndex] = '..';
     const question = progression.join(' ');
