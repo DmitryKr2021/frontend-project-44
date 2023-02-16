@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import runEngine from '../src/index.js';
+import askName from '../src/cli.js';
 
-runEngine('noRound');
+console.log('Welcome to the Brain Games!');
+askName();

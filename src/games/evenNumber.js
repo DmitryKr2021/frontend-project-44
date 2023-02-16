@@ -1,10 +1,15 @@
-import isEven from '../utils/isEven.js';
-import getRandomNumber from '../utils/getRandomNumber.js';
+import getRandomNumber from '../utils.js';
+import runEngine from '../index.js';
 
-export default function determineIfNumberIsEven() {
-  const testNumber = getRandomNumber(0, 100);
-  const question = String(testNumber);
-  const answer = isEven(testNumber) ? 'yes' : 'no';
-  const roundQuestion = 'Answer "yes" if the number is even, otherwise answer "no"';
-  return [question, answer, roundQuestion];
+const isEven = (number) => number % 2 === 0;
+
+export default function runEven() {
+  const generateRound = () => {
+    const testNumber = getRandomNumber(0, 100);
+    const question = String(testNumber);
+    const answer = isEven(testNumber) ? 'yes' : 'no';
+    return [question, answer];
+  };
+  const description = 'Answer "yes" if the number is even, otherwise answer "no"';
+  runEngine(generateRound, description);
 }

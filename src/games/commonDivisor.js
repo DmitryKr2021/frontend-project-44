@@ -1,11 +1,22 @@
-import getGCD from '../utils/getGCD.js';
-import getRandomNumber from '../utils/getRandomNumber.js';
+import getRandomNumber from '../utils.js';
+import runEngine from '../index.js';
 
-export default function determineCommonDivisor() {
-  const a = getRandomNumber(0, 30);
-  const b = getRandomNumber(0, 30);
-  const answer = getGCD(a, b);
-  const question = `${a} ${b}`;
-  const roundQuestion = 'Find the greatest common divisor of given numbers';
-  return [question, answer, roundQuestion];
+function getGCD(x, y) {
+  if (y !== 0) {
+    const z = x % y;
+    return getGCD(y, z);
+  }
+  return x;
+}
+
+export default function runGCD() {
+  const generateRound = () => {
+    const number1 = getRandomNumber(0, 30);
+    const number2 = getRandomNumber(0, 30);
+    const answer = getGCD(number1, number2);
+    const question = `${number1} ${number2}`;
+    return [question, String(answer)];
+  };
+  const description = 'Find the greatest common divisor of given numbers';
+  runEngine(generateRound, description);
 }

@@ -1,4 +1,5 @@
-import getRandomNumber from '../utils/getRandomNumber.js';
+import getRandomNumber from '../utils.js';
+import runEngine from '../index.js';
 
 function isPrime(arg) {
   if (arg === 2) return true;
@@ -9,10 +10,13 @@ function isPrime(arg) {
   return result !== 0;
 }
 
-export default function determineIfNumberIsPrime() {
-  const testNumber = getRandomNumber(2, 50);
-  const question = String(testNumber);
-  const answer = isPrime(testNumber) ? 'yes' : 'no';
-  const roundQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-  return [question, answer, roundQuestion];
+export default function runPrime() {
+  const generateRound = () => {
+    const testNumber = getRandomNumber(2, 50);
+    const question = String(testNumber);
+    const answer = isPrime(testNumber) ? 'yes' : 'no';
+    return [question, answer];
+  };
+  const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+  runEngine(generateRound, description);
 }

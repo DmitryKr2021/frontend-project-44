@@ -1,23 +1,21 @@
 import readlineSync from 'readline-sync';
-import askName from './cli.js';
 
-export default function runEngine(generateRound) {
+const askName = () => readlineSync.question('May I have your name? ');
+
+export default function runEngine(generateRound, description) {
   const roundCount = 3;
 
   console.log('Welcome to the Brain Games!');
   const userName = askName();
   console.log(`Hello, ${userName}!`);
-  if (generateRound === 'noRound') { return; }
-
-  const [roundQuestion] = generateRound().slice(2);
-  console.log(roundQuestion);
+  console.log(description);
 
   for (let counter = 0; counter < roundCount; counter += 1) {
-    const [question, correctAnswer] = generateRound();
+    const [question, answer] = generateRound();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer !== String(correctAnswer)) {
-      console.log(`'${userAnswer}' is wrong answer; (. Correct answer was '${correctAnswer}'`);
+    if (userAnswer !== answer) {
+      console.log(`'${userAnswer}' is wrong answer; (. Correct answer was '${answer}'`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
