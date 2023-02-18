@@ -1,12 +1,9 @@
 import readlineSync from 'readline-sync';
 
-const askName = () => readlineSync.question('May I have your name? ');
-
 export default function runEngine(generateRound, description) {
   const roundCount = 3;
-
   console.log('Welcome to the Brain Games!');
-  const userName = askName();
+  const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(description);
 
