@@ -1,13 +1,13 @@
 import getRandomNumber from '../utils.js';
 import runEngine from '../index.js';
 
-function getGCD(x, y) {
-  if (y !== 0) {
-    const z = x % y;
-    return getGCD(y, z);
+const getGCD = (number1, number2) => {
+  if (number2 !== 0) {
+    const tempResult = number1 % number2;
+    return getGCD(number2, tempResult);
   }
-  return x;
-}
+  return number1;
+};
 
 const generateRound = () => {
   const number1 = getRandomNumber(0, 30);

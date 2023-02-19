@@ -1,15 +1,15 @@
 import getRandomNumber from '../utils.js';
 import runEngine from '../index.js';
 
-function isPrime(arg) {
-  if (arg === 0 || arg === 1) return false;
-  if (arg === 2) return true;
-  let result = arg % 2;
-  for (let divisor = 3; divisor < Math.ceil(arg / 3) + 1; divisor += 2) {
-    result *= arg % divisor;
+const isPrime = (number) => {
+  if (number === 0 || number === 1) return false;
+  if (number === 2) return true;
+  let result = number % 2;
+  for (let divisor = 3; divisor < Math.ceil(number / 3) + 1; divisor += 2) {
+    result *= number % divisor;
   }
   return result !== 0;
-}
+};
 
 const generateRound = () => {
   const testNumber = getRandomNumber(0, 50);
